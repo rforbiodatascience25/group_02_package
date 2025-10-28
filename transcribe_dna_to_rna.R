@@ -6,7 +6,7 @@
 #' @examples transribe_dna("ATATAT")
 #' @export
 #'
-transribe_dna_to_rna <- function(dna_sequence){
+transcribe_dna_to_rna <- function(dna_sequence){
   rna_sequence <- gsub("T", "U", dna_sequence)
   return(rna_sequence)
 }
