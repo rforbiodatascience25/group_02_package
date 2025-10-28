@@ -53,7 +53,26 @@ rna_sequence <- transcribe_dna_to_rna(dna_sequence)
 print(rna_sequence)
 ```
 
-## split_into_codons()
+## split_into_codons(sequence)
+
+split_into_codons() takes a sequence and splits it into codons (sequences of 3). It can take any sequence, but to work with the other functions in the package an RNA sequence should be used.
+
+```{r}
+split_into_codons("AUGUUUUAA")
+```
+
+If the length of the sequence is not divisible by 3 the excess bases are not included
+
+```{r}
+split_into_codons("AUGUUUUAAGG")
+```
+
+Another starting point for the splitting can be chosen. The bases before that point in the sequence are not included
+
+```{r}
+split_into_codons("AUGUUUUAAGG",
+                  start = 3)
+```
 
 ## tRNA_rep(codons)
 
@@ -82,3 +101,5 @@ plot_content(protein)
 
   
 ```
+
+# Use cases for the package
