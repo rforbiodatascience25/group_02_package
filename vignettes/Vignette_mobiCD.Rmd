@@ -22,9 +22,9 @@ library(mobiCD)
 
 # Individual function explanation
 
-## generate_dna()
+## generate_dna(length)
 
-The first function called generate_dna
+The first function called generate_dna() is used for creating a random DNA sequence that contains four nucleotides: "A", "T", "C", "G". Inside the function a wanted length of the sequence is entered and DNA is generated randomly into a single string.
 
 ## match_replace()
 
