@@ -26,7 +26,11 @@ The whole package allows us to follow the central dogma of molecular biology. It
 
 ## generate_dna(length)
 
-The first function called generate_dna() is used for creating a random DNA sequence that contains four nucleotides: "A", "T", "C", "G". Inside the function a wanted length of the sequence is entered and DNA is generated randomly into a single string.
+The first function called generate_dna() is used for creating a random DNA sequence that contains four nucleotides: "A", "T", "C", "G". Inside the function a wanted length of the sequence is entered and DNA is generated randomly into a single string. An example of a 10 nucleotide having sequence can be seen below.
+
+```{r}
+generate_dna(10)
+```
 
 ## match_replace()
 
