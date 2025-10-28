@@ -32,7 +32,21 @@ The first function called generate_dna() is used for creating a random DNA seque
 generate_dna(10)
 ```
 
-## match_replace()
+## transcribe_dna_to_rna
+
+transcribe_dna_to_rna converts a DNA sequence into its corresponding RNA sequence by replacing all occurrences of the nucleotide **"T" (thymine)** with **"U" (uracil)**. It is mimicking the biological process of transcription. Here is an example
+
+```{r}
+transcribe_dna_to_rna("ATTCGT")
+```
+
+If you already have a DNA sequences saved you can also put it in, here is how it can look.
+
+```{r}
+dna_seq <- "ATGCTTAC"
+rna_seq <- transcribe_dna_to_rna(dna_seq)
+print(rna_seq)
+```
 
 ## split_into_codons(sequence)
 
@@ -57,7 +71,7 @@ split_into_codons("AUGUUUUAAGG",
 
 ## tRNA_rep(codons)
 
-tRNA_rep() function is used to correspond a codon to an amino-acid, just like a tRNA would do in the Central Dogma of molecular biology. We have included a table of codons with their corresponding amino-acids in the package. So, when you call the function with a 3 RNA nucleotide sequence, it tries to match it with an amino-acid from that table.
+tRNA_rep() function is used to correspond a codon to an amino-acid, just like a tRNA would do in the Central Dogma of molecular biology. We have included a table of codons with their corresponding amino-acids in the package. So, when you call the function with a 3 RNA nucleotide sequence, it tries to match it with an amino-acid from that table. If an input of multiple codons is given, then a protein will be returned.
 
 ```{r}
 tRNA_rep("AGC")
@@ -73,9 +87,11 @@ plot_content("SFRGLLIIDSSDFR")
 
 # Example of package usage
 
+In the example below, we create a DNA sequence of 60 nucleotides with the call of generate_dna(). Then, we use function match_replace() to create an RNA sequence out of the DNA one. With the use of split_into_codons() we split the RNA sequence into codons consisted of 3 nucleotides each and with tRNA_rep we match the codons with their amino_acids. Finally, with the protein created as an input we can run the function plot_content() and this will return a plot with the population of each amino-acid.
+
 ```{r}
 dna_seq <- generate_dna(60) 
-rna_seq <- match_replace(dna_seq)
+rna_seq <- transcribe_dna_to_rna(dna_seq)
 codons <- split_into_codons(rna_seq)
 protein <- tRNA_rep(codons)
 plot_content(protein)
