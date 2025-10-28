@@ -4,7 +4,7 @@
 \alias{transribe_dna_to_rna}
 \title{Match and replace}
 \usage{
-transribe_dna_to_rna(dna_sequence)
+transcribe_dna_to_rna(dna_sequence)
 }
 \arguments{
 \item{dna_sequence}{A sequence that is being matched.}
@@ -16,5 +16,5 @@ The function of the output is the replaced sequence that is made from param.
 Match and replace
 }
 \examples{
-transribe_dna("ATATAT")
+transcribe_dna("ATATAT")
 }

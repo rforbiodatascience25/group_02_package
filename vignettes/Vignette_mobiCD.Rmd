@@ -20,11 +20,17 @@ library(mobiCD)
 
 # Description
 
+The whole package allows us to follow the central dogma of molecular biology. It generates the flow of genetic information from DNA to RNA to protein, a process involving transcription (DNA to RNA) and translation (RNA to protein). Each of the unique codons are translated into different amino acids and predictions of unique protein properties can be made acording to the different amino acid quantities in a sequence.
+
 # Individual function explanation
 
-## generate_dna()
+## generate_dna(length)
 
-The first function called generate_dna
+The first function called generate_dna() is used for creating a random DNA sequence that contains four nucleotides: "A", "T", "C", "G". Inside the function a wanted length of the sequence is entered and DNA is generated randomly into a single string. An example of a 10 nucleotide having sequence can be seen below.
+
+```{r}
+generate_dna(10)
+```
 
 ## match_replace()
 
@@ -49,8 +55,30 @@ split_into_codons("AUGUUUUAAGG",
                   start = 3)
 ```
 
-## tRNA_rep()
+## tRNA_rep(codons)
 
-## plot_content()
+tRNA_rep() function is used to correspond a codon to an amino-acid, just like a tRNA would do in the Central Dogma of molecular biology. We have included a table of codons with their corresponding amino-acids in the package. So, when you call the function with a 3 RNA nucleotide sequence, it tries to match it with an amino-acid from that table.
+
+```{r}
+tRNA_rep("AGC")
+```
+
+## plot_content(protein)
+
+plot_content() function gets as input a protein and returns a plot showing the population of each amino-acid in this protein sequence. As a first step, it splits the sequence to separate amino-acids. Then, it creates a new table containing the counts for every amino-acid found previously. Finally, it generates a bar plot with all the counts calculated.
+
+```{r}
+plot_content("SFRGLLIIDSSDFR")
+```
 
 # Example of package usage
+
+```{r}
+dna_seq <- generate_dna(60) 
+rna_seq <- match_replace(dna_seq)
+codons <- split_into_codons(rna_seq)
+protein <- tRNA_rep(codons)
+plot_content(protein)
+
+  
+```
