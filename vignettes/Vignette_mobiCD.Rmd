@@ -44,14 +44,6 @@ transcribe_dna_to_rna converts a DNA sequence into its corresponding RNA sequenc
 transcribe_dna_to_rna("ATTCGT")
 ```
 
-If you already have a DNA sequences saved you can also put it in, here is how it can look.
-
-```{r}
-dna_seq <- "ATGCTTAC"
-rna_seq <- transcribe_dna_to_rna(dna_seq)
-print(rna_seq)
-```
-
 ## split_into_codons(sequence)
 
 split_into_codons() takes a sequence and splits it into codons (sequences of 3). It can take any sequence, but to work with the other functions in the package an RNA sequence should be used.
