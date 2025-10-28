@@ -63,3 +63,5 @@ plot_content(protein)
 
   
 ```
+
+# Use cases for the package
