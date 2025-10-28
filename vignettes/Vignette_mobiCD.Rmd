@@ -18,6 +18,20 @@ knitr::opts_chunk$set(
 library(mobiCD)
 ```
 
+# Description
+
 # Individual function explanation
 
+## generate_dna()
+
 The first function called generate_dna
+
+## match_replace()
+
+## split_into_codons()
+
+## tRNA_rep()
+
+## plot_content()
+
+# Example of package usage
