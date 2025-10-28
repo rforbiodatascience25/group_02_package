@@ -1,0 +1,35 @@
+Package: mobiCD
+Type: Package
+Title: Molecular Biology Central Dogma
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Anastasia", "Kampantai",
+      email = "s253724@dtu.dk",
+      role = c("aut", "cre")
+    )
+    person(
+      "Hannah", "Espelund Nørrelykke",
+      email = "s224972@dtu.dk",
+      role = c("aut")
+    )
+    person(
+      "Mie", "He Larsen",
+      email = "s224976@dtu.dk",
+      role = c("aut")
+    )
+    person(
+      "Raminta", "Jonauskaite ",
+      email = "s254123@dtu.dk",
+      role = c("aut")
+    )
+  )
+Description: We will implement a central dogma
+    of Molecular biology in this package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
