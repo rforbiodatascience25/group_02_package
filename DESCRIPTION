@@ -24,7 +24,7 @@ Authors@R:
       email = "s254123@dtu.dk"
     )
   )
-Description: We will implement a central dogma
+Description: We will implement the central dogma
     of Molecular biology in this package.
 License: MIT + file LICENSE
 Encoding: UTF-8
