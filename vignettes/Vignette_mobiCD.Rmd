@@ -45,9 +45,9 @@ transcribe_dna_to_rna("ATTCGT")
 If you already have a DNA sequences saved you can also put it in, here is how it can look.
 
 ```{r}
-dna_sequence <- "ATGCTTAC"
-rna_sequence <- transcribe_dna_to_rna(dna_sequence)
-print(rna_sequence)
+dna_seq <- "ATGCTTAC"
+rna_seq <- transcribe_dna_to_rna(dna_seq)
+print(rna_seq)
 ```
 
 ## split_into_codons(sequence)
@@ -102,3 +102,7 @@ plot_content(protein)
 ```
 
 # Use cases for the package
+
+This package could be used for determining the sequence of amino acids in a protein which gives an insight into it's function. Also, knowing what is the distribution of different amino acids gives an understanding of proteins' chemical properties.
+
+If there would be a need to find open reading frames of the proteins, a function looking for a 'AUG' start and 'UAA, UAG, UGA' stop codons could be added. Also, there could be a function searching for a specific sequence within the unknown sequence to find an area of interest.
