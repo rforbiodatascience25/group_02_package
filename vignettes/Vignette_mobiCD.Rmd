@@ -1,6 +1,6 @@
 ---
 title: "Vignette_mobiCD"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{Vignette_mobiCD}
   %\VignetteEngine{knitr::rmarkdown}
