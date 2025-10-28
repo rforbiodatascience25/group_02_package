@@ -38,11 +38,19 @@ generate_dna(10)
 
 ## tRNA_rep(codons)
 
-tRNA_rep() function is used to correspond a codon to an amino-acid, just like a tRNA would do in the Central Dogma of molecular biology. We have included a table of codons with their corresponding amino-acids in the package. So, when you call the function with a 3 RNA nucleotide sequence, it tries to match it with an amino-acid from that table. If a big sequence of codons are given as an input, a protein sequence will be returned.
+tRNA_rep() function is used to correspond a codon to an amino-acid, just like a tRNA would do in the Central Dogma of molecular biology. We have included a table of codons with their corresponding amino-acids in the package. So, when you call the function with a 3 RNA nucleotide sequence, it tries to match it with an amino-acid from that table.
+
+```{r}
+tRNA_rep("AGC")
+```
 
 ## plot_content(protein)
 
-plot_content() function gets as input a protein and returns a plot showing the population of each amino-acid in this protein sequence. As a first step, it splits the sequence to separate amino-acids. Then, it creates a new table containing the counts for every amino-acid found previously. Finally, it generates a bar plot with all
+plot_content() function gets as input a protein and returns a plot showing the population of each amino-acid in this protein sequence. As a first step, it splits the sequence to separate amino-acids. Then, it creates a new table containing the counts for every amino-acid found previously. Finally, it generates a bar plot with all the counts calculated.
+
+```{r}
+plot_content("SFRGLLIIDSSDFR")
+```
 
 # Example of package usage
 
