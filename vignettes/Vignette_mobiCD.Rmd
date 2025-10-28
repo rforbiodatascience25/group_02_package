@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 library(mobiCD)
 ```
 
+<https://github.com/rforbiodatascience25/group_02_package>
+
 # Description
 
 The whole package allows us to follow the central dogma of molecular biology. It generates the flow of genetic information from DNA to RNA to protein, a process involving transcription (DNA to RNA) and translation (RNA to protein). Each of the unique codons are translated into different amino acids and predictions of unique protein properties can be made acording to the different amino acid quantities in a sequence.
