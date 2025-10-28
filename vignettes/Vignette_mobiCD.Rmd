@@ -20,6 +20,8 @@ library(mobiCD)
 
 # Description
 
+The whole package allows us to follow the central dogma of molecular biology. It generates the flow of genetic information from DNA to RNA to protein, a process involving transcription (DNA to RNA) and translation (RNA to protein). Each of the unique codons are translated into different amino acids and predictions of different protein properties can be made acording to the different amino acid quantities in a sequence.
+
 # Individual function explanation
 
 ## generate_dna(length)
