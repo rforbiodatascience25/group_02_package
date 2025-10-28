@@ -2,26 +2,26 @@ Package: mobiCD
 Type: Package
 Title: Molecular Biology Central Dogma
 Version: 0.1.0
-Authors@R: c(
-    person(
+Authors@R: 
+  c(person(
       "Anastasia", "Kampantai",
-      email = "s253724@dtu.dk",
-      role = c("aut", "cre")
-    )
+      role = c("aut", "cre"),
+      email = "s253724@dtu.dk"
+    ),
     person(
       "Hannah", "Espelund Nørrelykke",
-      email = "s224972@dtu.dk",
-      role = c("aut")
-    )
+      role = c("aut"),
+      email = "s224972@dtu.dk"
+    ),
     person(
       "Mie", "He Larsen",
-      email = "s224976@dtu.dk",
-      role = c("aut")
-    )
+      role = c("aut"),
+      email = "s224976@dtu.dk"
+    ),
     person(
       "Raminta", "Jonauskaite ",
-      email = "s254123@dtu.dk",
-      role = c("aut")
+      role = c("aut"),
+      email = "s254123@dtu.dk"
     )
   )
 Description: We will implement a central dogma
@@ -31,7 +31,10 @@ Encoding: UTF-8
 LazyData: true
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Depends: 
     R (>= 3.5)
+RoxygenNote: 7.3.2
+Config/testthat/edition: 3
