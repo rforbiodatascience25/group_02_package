@@ -43,9 +43,9 @@ transcribe_dna_to_rna("ATTCGT")
 If you already have a DNA sequences saved you can also put it in, here is how it can look.
 
 ```{r}
-dna_sequence <- "ATGCTTAC"
-rna_sequence <- transcribe_dna_to_rna(dna_sequence)
-print(rna_sequence)
+dna_seq <- "ATGCTTAC"
+rna_seq <- transcribe_dna_to_rna(dna_seq)
+print(rna_seq)
 ```
 
 ## split_into_codons(sequence)
