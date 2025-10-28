@@ -32,7 +32,26 @@ The first function called generate_dna() is used for creating a random DNA seque
 generate_dna(10)
 ```
 
-## match_replace()
+## transcribe_dna_to_rna
+
+transcribe_dna_to_rna converts a DNA sequence into its corresponding RNA sequence by replacing all occurrences of the nucleotide **"T" (thymine)** with **"U" (uracil)**. It is mimicking the biological process of transcription. Here is an example
+
+```{r}
+transribe_dna_to_rna("ATTCGT")
+```
+
+If you already have a DNA sequences saved you can also put it in, here is how it can look.
+
+```{r}
+# Define a DNA sequence
+dna_sequence <- "ATGCTTAC"
+
+# Transcribe DNA to RNA
+rna_sequence <- transcribe_dna_to_rna(dna_sequence)
+
+# Print the result
+print(rna_sequence)
+```
 
 ## split_into_codons()
 
