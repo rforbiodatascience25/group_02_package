@@ -1,0 +1,120 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+``` r
+library(mobiCD)
+```
+
+<https://github.com/rforbiodatascience25/group_02_package>
+
+# Description
+
+The whole package allows us to follow the central dogma of molecular
+biology. It generates the flow of genetic information from DNA to RNA to
+protein, a process involving transcription (DNA to RNA) and translation
+(RNA to protein). Each of the unique codons are translated into
+different amino acids and predictions of unique protein properties can
+be made acording to the different amino acid quantities in a sequence.
+
+# Individual function explanation
+
+## generate_dna(length)
+
+The first function called generate_dna() is used for creating a random
+DNA sequence that contains four nucleotides: “A”, “T”, “C”, “G”. Inside
+the function a wanted length of the sequence is entered and DNA is
+generated randomly into a single string. An example of a 10 nucleotide
+having sequence can be seen below.
+
+``` r
+generate_dna(10)
+#> [1] "CTCGCCGACA"
+```
+
+## transcribe_dna_to_rna(sequence)
+
+transcribe_dna_to_rna converts a DNA sequence into its corresponding RNA
+sequence by replacing all occurrences of the nucleotide **“T”
+(thymine)** with **“U” (uracil)**. It is mimicking the biological
+process of transcription. Here is an example
+
+``` r
+transcribe_dna_to_rna("ATTCGT")
+#> [1] "AUUCGU"
+```
+
+## split_into_codons(sequence)
+
+split_into_codons() takes a sequence and splits it into codons
+(sequences of 3). It can take any sequence, but to work with the other
+functions in the package an RNA sequence should be used. If the length
+of the sequence is not divisible by 3 the excess bases are not included.
+Another starting point for the splitting can be chosen. The bases before
+that point in the sequence are not included.
+
+``` r
+split_into_codons("AUGUUUUAAGG", 
+                  start = 3)
+#> [1] "GUU" "UUA" "AGG"
+```
+
+## tRNA_rep(codons)
+
+tRNA_rep() function is used to correspond a codon to an amino acid,
+mimicking tRNA.THe pacckage includes a table of codons with their
+corresponding amino acids. When the function is called with a 3 RNA
+nucleotide sequence, it tries to match it with an amino acid from that
+table. If an input of multiple codons is given, then a protein will be
+returned.
+
+``` r
+tRNA_rep("AGC")
+#> [1] "S"
+```
+
+## plot_content(protein)
+
+plot_content() function gets as input a protein and returns a plot
+showing the population of each amino acid in this protein sequence. It
+splits the sequence to separate amino acids. Then, it creates a new
+table containing the counts for every amino-acid found previously.
+Finally, it generates a bar plot with all the counts calculated.
+
+``` r
+plot_content("SFRGLLIIDSSDFR")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.svg)<!-- -->
+
+# Example of package usage
+
+In the example below, we create a DNA sequence of 60 nucleotides with
+the call of generate_dna(). Then, we use function match_replace() to
+create an RNA sequence out of the DNA one. With the use of
+split_into_codons() we split the RNA sequence into codons consisted of 3
+nucleotides each and with tRNA_rep we match the codons with their
+amino_acids. Finally, with the protein created as an input we can run
+the function plot_content() and this will return a plot with the
+population of each amino-acid.
+
+``` r
+dna_seq <- generate_dna(60)  
+rna_seq <- transcribe_dna_to_rna(dna_seq) 
+codons <- split_into_codons(rna_seq) 
+protein <- tRNA_rep(codons) 
+plot_content(protein)    
+```
+
+![](README_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
+
+# Use cases for the package
+
+This package could be used for determining the sequence of amino acids
+in a protein which gives an insight into it’s function. Also, knowing
+what is the distribution of different amino acids gives an understanding
+of proteins’ chemical properties.
+
+If there would be a need to find open reading frames of the proteins, a
+function looking for a ‘AUG’ start and ‘UAA, UAG, UGA’ stop codons could
+be added. Also, there could be a function searching for a specific
+sequence within the unknown sequence to find an area of interest.
