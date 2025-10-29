@@ -36,7 +36,7 @@ The first function called generate_dna() is used for creating a random DNA seque
 generate_dna(10)
 ```
 
-## transcribe_dna_to_rna
+## transcribe_dna_to_rna(sequence)
 
 transcribe_dna_to_rna converts a DNA sequence into its corresponding RNA sequence by replacing all occurrences of the nucleotide **"T" (thymine)** with **"U" (uracil)**. It is mimicking the biological process of transcription. Here is an example
 
