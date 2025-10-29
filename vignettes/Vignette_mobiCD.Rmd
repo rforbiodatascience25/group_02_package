@@ -11,8 +11,8 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.height = 3, 
-  fig.width = 2
+  fig.height = 1, 
+  fig.width = 1
 )
 ```
 
@@ -46,19 +46,7 @@ transcribe_dna_to_rna("ATTCGT")
 
 ## split_into_codons(sequence)
 
-split_into_codons() takes a sequence and splits it into codons (sequences of 3). It can take any sequence, but to work with the other functions in the package an RNA sequence should be used.
-
-```{r}
-split_into_codons("AUGUUUUAA")
-```
-
-If the length of the sequence is not divisible by 3 the excess bases are not included
-
-```{r}
-split_into_codons("AUGUUUUAAGG")
-```
-
-Another starting point for the splitting can be chosen. The bases before that point in the sequence are not included
+split_into_codons() takes a sequence and splits it into codons (sequences of 3). It can take any sequence, but to work with the other functions in the package an RNA sequence should be used. If the length of the sequence is not divisible by 3 the excess bases are not included. Another starting point for the splitting can be chosen. The bases before that point in the sequence are not included.
 
 ```{r}
 split_into_codons("AUGUUUUAAGG",
@@ -67,7 +55,7 @@ split_into_codons("AUGUUUUAAGG",
 
 ## tRNA_rep(codons)
 
-tRNA_rep() function is used to correspond a codon to an amino-acid, just like a tRNA would do in the Central Dogma of molecular biology. We have included a table of codons with their corresponding amino-acids in the package. So, when you call the function with a 3 RNA nucleotide sequence, it tries to match it with an amino-acid from that table. If an input of multiple codons is given, then a protein will be returned.
+tRNA_rep() function is used to correspond a codon to an amino acid, mimicking tRNA.THe pacckage includes a table of codons with their corresponding amino acids. When the function is called with a 3 RNA nucleotide sequence, it tries to match it with an amino acid from that table. If an input of multiple codons is given, then a protein will be returned.
 
 ```{r}
 tRNA_rep("AGC")
@@ -75,7 +63,7 @@ tRNA_rep("AGC")
 
 ## plot_content(protein)
 
-plot_content() function gets as input a protein and returns a plot showing the population of each amino-acid in this protein sequence. As a first step, it splits the sequence to separate amino-acids. Then, it creates a new table containing the counts for every amino-acid found previously. Finally, it generates a bar plot with all the counts calculated.
+plot_content() function gets as input a protein and returns a plot showing the population of each amino acid in this protein sequence. It splits the sequence to separate amino acids. Then, it creates a new table containing the counts for every amino-acid found previously. Finally, it generates a bar plot with all the counts calculated.
 
 ```{r}
 plot_content("SFRGLLIIDSSDFR")
